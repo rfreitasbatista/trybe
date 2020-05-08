@@ -1,0 +1,19 @@
+Aula 1 Bloco 2 exercícios
+
+
+git init - inicia o processo de subida de arquivos do repositório escolhido para o Github ou outro site aglomerador.
+git add - coloca o arquivo em processo de commit
+git commit - commita todos arquivos para serem enviado à nuvem
+git remote add APELIDO URL - linka o diretorio local com o remoto
+git remote -v - verifica o se o repositorio de nuvem esta correto
+git push - envia os arquivos locais no commit para o repositorio nuvem 
+
+Aula 2 Bloco 2 
+
+git clone - puxa todos arquivos dentro do repositorio onde este codigo é operado
+git log - mostra os commits feitos ou commit de um arquivo especifico quando mostrado seu nome
+git show - mostra as alteracoes de um commit (utilizar os 4 primeiros caracteres identificadores do commit)
+git rm ARQUIVO - deleta arquivo do commit (é necessario criar um novo commit para efetivar)
+git log --diff-filter=D --summary - mostra o registro de commits deletados
+git checkout IDCOMMIT~1 NOMEDOARQUIVO - restaura o arquivo escolhido do commit escolhido, é necessario que se adicione e que se faça um novo commit, pois ele somente recupera no diretorio local
+

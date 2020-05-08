@@ -1,0 +1,98 @@
+#container {
+    background: greenyellow;
+    border: 5px dashed black;
+    padding: 20px;
+    width: 90%;
+    margin: auto;
+}
+.italic {
+    font-style: italic;
+}
+.bold {
+    font-weight: 900;
+}
+.clear {
+    clear: both;
+}
+/*TITULO PRINCIPAL*/
+#main_title {
+    background-color: orange;
+    border: 3px solid blue;
+    padding: 10px;
+    margin: 20px 0px;
+    text-align: center;
+    letter-spacing: 4px;
+}
+#general_info {
+    align-items: center;
+}
+.section_subtitle {
+    text-align: center;
+    background-color: darkblue;
+    color: white;
+    border: 3px solid orange;
+}
+p {
+    text-align: justify;
+}
+img{
+    width: 200px;
+    float: left;
+    border: 3px solid orange;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.general_info_img {
+    width: 50%;
+    position: relative;
+    left: 25%;
+    right: 25%;
+    margin-bottom: 30px;
+}
+.lifestyle_img {
+    width:100%;
+}
+#classification_table {
+    background-color: orange;
+    border: 2px dotted blue;
+    color:black;
+    width: 90%;
+    margin: auto;
+}
+
+#classification_table th{
+    border: 2px dotted white;
+    padding: 5px;
+}
+#classification_table td{
+    border: 2px dotted white;
+    padding: 5px;
+    text-align: center;
+}
+
+.video_know_him {
+    background-color: indigo;
+    border: orange;
+    margin: 20px 0em;
+    width: 48%;
+    text-align: center;
+    border: 3px solid orange;
+    
+}
+.video_title {
+    margin-top: 0;
+    margin-bottom: 0;
+    border: none;
+    border-bottom: 3px solid orange;
+}
+.video_frame {
+    width: 100%;
+}
+.left_float {
+    float: left;
+    width: 48%;
+}
+.right_float {
+    float: right;
+    width: 48%;
+ 

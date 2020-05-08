@@ -1,0 +1,62 @@
+#!/bin/bash
+
+BLOCO 1 AULA 1 PARTE 2
+
+#Exercícios 1
+
+cd ~/TRYBE/bloco1/exercicios/unix_tests
+curl -o countries.txt "https://gist.githubusercontent.com/kalinchernev/486393efcca01623b18d/raw/daa24c9fea66afb7d68f8d69f0c4b8eeb9406e83/countries"
+
+#Exercícios 2
+
+cat countries.txt
+
+#Exercícios 3
+
+less countries.txt
+
+#Exercícios 4
+
+less countries.txt
+/Zambia
+
+#Exercícios 5
+
+grep Brazil countries.txt
+
+#Exercícios 6
+
+grep -i brazil countries.txt
+
+#Exercícios 7
+
+grep -v fox countries.txt
+
+#Exercícios 8
+
+wc -w phrases.txt
+
+#Exercícios 9
+
+wc -l phrases.txt
+
+#Exercícios 10
+
+touch empty.pdf
+touch empty.tbt
+
+#Exercícios 11
+
+ls ~/TRYBE/bloco1/exercicios/unix_tests
+
+#Exercícios 12
+
+ls *txt ~/TRYBE/bloco1/exercicios/unix_tests
+
+#Exercícios 13
+
+ls *txt && ls *tbt 
+
+#Exercícios 14
+
+man ls

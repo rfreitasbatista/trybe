@@ -1,0 +1,37 @@
+#!/bin/bash
+
+BLOCO 1 AULA 2 PARTE 4
+
+#Exercícios 1
+
+cmatrix
+
+#Exercícios 2
+
+fortune | cat > fortune.txt
+
+#Exercícios 3
+
+cat fortune.txt | wc -w 
+
+#Exercícios 4
+
+sl
+sl -l
+
+#Exercícios 5
+
+cowsay oi
+cat fortune.txt | cowsay
+
+#Exercícios 6
+
+factor 42
+
+#Exercícios 7
+
+fortune | rev
+
+#Exercícios 8
+
+telnet towel.blinkenlights.nl
