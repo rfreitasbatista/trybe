@@ -1,0 +1,57 @@
+#!/bin/bash
+
+BLOCO 1 AULA 2 PARTE 1
+
+#Exercícios 1
+
+cd ~/TRYBE/bloco1/exercicios/unix_tests
+
+#Exercícios 2
+
+cat > skills2.txt
+Internet
+Unix 
+Bash 
+
+#Exercícios 3
+
+cat >> skills2.txt
+Java
+Javascript
+CSS
+React
+Node
+
+sort skills2.txt
+
+#Exercícios 4
+
+wc -l skills2.txt
+
+#Exercícios 5 
+
+sort skills2.txt | head -n 3 | cat > top_skills.txt
+
+#Exercícios 6
+
+cat > phrases2.txt
+
+#Exercícios 7
+
+grep -l br phrases2.txt | wc -l
+
+#Exercícios 8 
+
+grep -v br phrases2.txt | wc-l
+
+#Exercícios 9
+
+cat >> phrases2.txt
+
+#Exercícios 10
+
+cat phrases2.txt countries.txt > bunch_of_things.txt
+
+#Exercícios 11
+
+sort bunch_of_things.txt

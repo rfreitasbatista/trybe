@@ -1,0 +1,30 @@
+#!/bin/bash
+
+BLOCO 1 AULA 2 PARTE 2
+
+#Exercícios 1
+
+cd ~/mnt/c/Users/rfrei/trybe/bloco1/exercicios/unix_tests
+
+#Exercícios 2
+
+ls -l
+
+#Exercícios 3
+
+chmod a+rw bunch_of_things.txt
+
+#Exercícios 4
+
+chmod a-w bunch_of_things
+ls -l
+
+#Exercícios 5
+
+chmod 644 bunch_of_things.txt
+
+ Cada tipo de permissão possui um valor:
+ Escrita - 2
+ Leitura - 4
+ Executar - 1
+ 

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+BLOCO 1 AULA 2 PARTE 4
+
+
+
