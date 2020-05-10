@@ -63,6 +63,7 @@
     box-sizing: border-box;
     margin-right: 0;
     margin-left: 0;
+    font-weight: 900;
 }
 #navegacao :hover {
     background-color: blue;
