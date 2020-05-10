@@ -1,12 +1,16 @@
 
 /*general config*/
-
+*{ 
+    font-family: cursive;
+}
 
 #container {
     background: greenyellow;
     border: 5px dashed black;
     padding: 20px;
-    width: 90%;
+    box-sizing: border-box;
+    width: 95%;
+    height: 3000px;
     margin: auto;
 }
 .italic {
@@ -31,14 +35,6 @@
     letter-spacing: 4px;
 }
 
-
-#general_info {
-    align-items: center;
-}
-#about_eating {
-    position: relative;
-    bottom: 50px;
-}
 
 /*menu config*/
 
@@ -68,7 +64,7 @@
 #navegacao :hover {
     background-color: blue;
     color: white;
-    border: 3px solid white;
+    border: 2px solid white;
 }
 
 
@@ -100,8 +96,7 @@ img{
     width: 200px;
     float: left;
     border: 3px solid orange;
-    margin-left: 5px;
-    margin-right: 5px;
+    
 }
 .general_info_img {
     width: 50%;
@@ -142,10 +137,11 @@ img{
 
 
 /*Video config*/
+
 .video_know_him {
     background-color: indigo;
     border: orange;
-    margin: 20px 0em;
+    margin: 25px 0px 0px;
     width: 48%;
     text-align: center;
     border: 3px solid orange;
@@ -156,13 +152,24 @@ img{
     margin-bottom: 0;
     border: none;
     border-bottom: 3px solid orange;
+    font-size: 1em;
 }
 .video_frame {
     width: 100%;
 }
+.right_float_video {
+    float: right;
+}
 
+/*article boxes*/
 
-
+#general_info {
+    align-items: center;
+}
+#about_eating {
+    position: relative;
+    bottom: 30px;
+}
 
 /*float config*/
 
@@ -176,4 +183,21 @@ img{
     float: right;
     width: 48%;
     margin: 5px 0px 10px 10px;
+}
+
+/*footer*/
+footer {
+    border: 3px solid blue;
+    width: 100%;
+    height: 60px;
+    background-color: orange;
+    margin: 20px 0px;
+}
+
+footer p{
+    text-align: center;
+    font-weight: 900;
+    font-size: 0.9em;
+    line-height: 60px;
+    margin:0px;
 }
