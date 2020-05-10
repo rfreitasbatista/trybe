@@ -1,3 +1,7 @@
+
+/*general config*/
+
+
 #container {
     background: greenyellow;
     border: 5px dashed black;
@@ -14,7 +18,10 @@
 .clear {
     clear: both;
 }
-/*TITULO PRINCIPAL*/
+
+
+
+/*main title*/
 #main_title {
     background-color: orange;
     border: 3px solid blue;
@@ -23,18 +30,38 @@
     text-align: center;
     letter-spacing: 4px;
 }
+
+
 #general_info {
     align-items: center;
 }
+#about_eating {
+    position: relative;
+    bottom: 50px;
+}
+
+/*subtitle config*/
+
 .section_subtitle {
     text-align: center;
     background-color: darkblue;
     color: white;
     border: 3px solid orange;
 }
+
+
+/*paragraphs config*/
+
 p {
     text-align: justify;
 }
+
+
+
+
+
+/*img config*/
+
 img{
     width: 200px;
     float: left;
@@ -52,12 +79,19 @@ img{
 .lifestyle_img {
     width:100%;
 }
+
+
+
+
+/*table config*/
+
 #classification_table {
     background-color: orange;
     border: 2px dotted blue;
     color:black;
     width: 90%;
     margin: auto;
+    
 }
 
 #classification_table th{
@@ -68,8 +102,12 @@ img{
     border: 2px dotted white;
     padding: 5px;
     text-align: center;
+    
 }
 
+
+
+/*Video config*/
 .video_know_him {
     background-color: indigo;
     border: orange;
@@ -88,11 +126,19 @@ img{
 .video_frame {
     width: 100%;
 }
+
+
+
+
+/*float config*/
+
 .left_float {
     float: left;
     width: 48%;
+    margin: 5px 10px 10px 0px;
+    
 }
 .right_float {
     float: right;
     width: 48%;
- 
+}
