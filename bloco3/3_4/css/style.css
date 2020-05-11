@@ -78,7 +78,10 @@
 
 
 /*menu config*/
-
+#navegacao {
+    padding-left: 0;
+    text-align: center;
+}
 #navegacao ul {
     text-align: center;
     padding-left: 0;
