@@ -41,7 +41,7 @@
 
 /*general config*/
 *{ 
-    font-family: 'quickpen';
+    font-family: 'cursive';
 }
 
 #container {
@@ -225,7 +225,22 @@ img{
     width: 48%;
     margin: 5px 0px 10px 10px;
 }
+/*referencias bibliográficas*/
+#referencias {
+    width: 100%;
+    height: 250px;
+    padding:5px;
+}
+#referencias p{
+    line-height: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 0.7em;
 
+}
+#referencias h4{
+    margin: 5px;
+}
 /*footer*/
 footer {
     border: 3px solid blue;
