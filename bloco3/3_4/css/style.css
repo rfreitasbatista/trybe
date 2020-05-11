@@ -23,6 +23,12 @@
     font-weight: normal;
     font-size: normal;
 }
+@font-face {
+    font-family: 'sherlock';
+    src: url('./fonts/sherlock/Sherlock\ Vintage.otf');
+    font-weight: normal;
+    font-size: normal;
+}
 
 
 
@@ -35,7 +41,7 @@
 
 /*general config*/
 *{ 
-    font-family: cursive;
+    font-family: 'quickpen';
 }
 
 #container {
@@ -223,10 +229,10 @@ img{
 /*footer*/
 footer {
     border: 3px solid blue;
-    width: 100%;
+    width: 35%;
     height: 60px;
     background-color: orange;
-    margin: 20px 0px 0px;
+    margin: 20px auto 0px;
     text-align: center;
     padding: 5px 0;
 }
@@ -249,7 +255,7 @@ footer span{
 
 /*links de redes sociais*/
 .logosm {
-    width: 25px;
+    width: 22px;
 }
 .first_logo{
     margin-right: 0;
@@ -260,8 +266,8 @@ footer span{
     margin: auto;
 }
 #social_media_box a{
-    width: 30px;
-    height:30px;
+    width: 28px;
+    height:28px;
     display: inline-block;
     margin-right: 3px;
 }
