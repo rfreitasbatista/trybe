@@ -1,5 +1,5 @@
-let chess = "pawn";
+let chess = "PAWN";
 
-if (chess === "pawn") {
+if (chess.toLowerCase() === "pawn") {
   console.log("Pawn -> 1 slot - all directions")
 } 
