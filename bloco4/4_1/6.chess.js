@@ -1,5 +1,6 @@
 let chess = "PAWN";
+let move1 = "Single slot - All directions"
 
 if (chess.toLowerCase() === "pawn") {
-  console.log("Pawn -> 1 slot - all directions")
+  console.log( chess.toLowerCase() +" "+ move1)
 } 
