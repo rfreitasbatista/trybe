@@ -1,3 +1,4 @@
+
 let a = 1;
 let b = 30;
 let c = 1000;
@@ -12,6 +13,7 @@ else if ( b > a && b > c) {
 else {
  resultado = c;
 }
+
 
 
 console.log(resultado);
