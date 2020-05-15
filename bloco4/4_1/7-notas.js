@@ -1,3 +1,4 @@
+
 let nota = 70;
 let notaFinal;
 
@@ -19,5 +20,6 @@ else if (nota < 60 && nota >= 50) {
 else {
   notaFinal = "F";
 }
+
 
 console.log(notaFinal);

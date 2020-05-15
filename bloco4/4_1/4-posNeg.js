@@ -1,3 +1,4 @@
+
 let a = 1;
 
 let resultado;
@@ -11,6 +12,7 @@ else if ( a < 0) {
 else {
  resultado = "zero";
 }
+
 
 
 console.log(resultado);

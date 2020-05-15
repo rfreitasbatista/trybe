@@ -1,3 +1,4 @@
+
 let custo = 35;
 let venda = 70;
 
@@ -16,5 +17,6 @@ if (lucro >= 0) {
 else {
 console.log("Prejuízo de R$" + receita);
 }
+
 
 }

@@ -1,3 +1,4 @@
+
 let salarioBruto = 8000
 let descontoINSS
 let descontoIR
@@ -37,4 +38,5 @@ console.log("Salário Bruto: R$" + salarioBruto);
 console.log("Desconto INSS: R$" + descontoINSS);
 console.log("Salário Base: R$" + salarioBase);
 console.log("Desconto IR: R$" + descontoIR);
+
 console.log("Salário líquido: R$" + (salarioBase-descontoIR));

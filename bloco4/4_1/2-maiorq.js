@@ -1,3 +1,4 @@
+
 let a = 1;
 let b = 30;
 let resultado;
@@ -7,6 +8,7 @@ if (a > b) {
 } else {
   resultado = b;
 }
+
 
 
 console.log(resultado);
