@@ -1,0 +1,94 @@
+<body>
+<div id="stack">
+	<div class="column_left"> 
+		<div class="leftBorderSquare">
+        	<div class="upperInnerSquare">	
+			    </div>
+    </div>
+    <div class="leftBorderSquare">
+        	<div class="lowerInnerSquare">
+          </div>
+    </div>
+ 	</div>
+ 	<div class="column_right">
+    	<div class="rightBorderSquare">
+        	<div class="upperInnerSquare">	
+			    </div>
+    	</div>
+    	<div class="rightBorderSquare">
+        	<div  class="lowerInnerSquare">
+			    </div>
+    	</div>
+  	</div>
+</div>
+<style>
+
+
+
+#stack{
+	height:20rem;
+	width:20rem;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-evenly;
+	align-items:center;
+	border: solid black 4px;
+}
+
+.column_left, .column_right{
+	
+    height:18rem;
+	width:8rem;
+    margin:auto;
+	display:flex;
+	flex-direction:column;
+    justify-content:space-evenly;
+    border: solid black 4px;
+    }
+.column_left>div, .column_right>div{
+	height:5rem;
+	width:5rem ;
+	display:flex;
+	align-items:center;
+    justify-content:center;
+    margin:auto;
+    border: solid black 4px;
+}  
+
+div>div>div>div{
+    height:2.5rem;
+	width:2.5rem; 
+    border: solid black 4px;
+}
+
+.leftBorderSquare {
+  background-color: white;
+}
+
+
+
+</style>
+<script>
+
+ window.onload = alert("Voce é lindo e maravilhoso")
+
+ var left1 = document.getElementsByClassName('leftBorderSquare');
+ left1[0].style.backgroundColor="salmon"
+ left1[1].style.backgroundColor="salmon"
+ var right1 = document.getElementsByClassName('rightBorderSquare');
+ right1[0].style.backgroundColor="purple"
+ right1[1].style.backgroundColor="purple"
+ var cima1 = document.getElementsByClassName('upperInnerSquare');
+ cima1[0].style.backgroundColor="pink"
+ cima1[1].style.backgroundColor="pink"
+ var baixo1 = document.getElementsByClassName('lowerInnerSquare');
+ baixo1[0].style.backgroundColor="yellow"
+ baixo1[1].style.backgroundColor="yellow"
+ var container = document.getElementById('stack')
+ container.style.backgroundColor="red"
+ var right0 = document.getElementsByClassName('column_right')
+ right0[0].style.backgroundColor="green"
+ var left0 = document.getElementsByClassName('column_left')
+ left0[0].style.backgroundColor="blue"
+</script>
+</body>
