@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <style>
+    .fundoFontColor {
+      color: white;
+      background-color: black;
+      font-size: 1.2em;
+    }
+    </style>
+  </head>
+  <body>
+    <h2 id="page-title">Título</h2>
+    <p id="paragraph" class="fundoFontColor">Dê uma cor para este parágrafo!</p>
+    <h4 id="subtitle">Subtítulo</h4>
+    <p id="second-paragraph" class="fundoFontColor">Segundo parágrafo!</p>
+
+    <script>
+      var tituloPagina = document.querySelector("#page-title")
+      tituloPagina.innerHTML = "Guerra Mundial Z";
+      var segParagrafo = document.querySelector("#second-paragraph")
+      segParagrafo.innerHTML= "Conteúdo imoprópio para menores de 16 anos"
+      segParagrafo.style.color = "red";
+      var subtitulo = document.querySelector("#subtitle")
+      subtitulo.innerHTML = "Contra-indicações"
+
+      var paragrafo1 = document.querySelector(".fundoFontColor")
+      paragrafo1.style.color = "red"
+      
+      var subtituloTag = document.querySelector("h4")
+      
+    </script>
+  </body>
+</html>
