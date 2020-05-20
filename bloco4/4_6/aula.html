@@ -1,0 +1,40 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+ </head>
+ <body>
+  <div id="paiDoPai">
+    <div id="pai">
+      <div id="primeiroFilho"></div>
+      <div id="elementoOndeVoceEsta">
+        <div id="primeiroFilhoDoFilho"></div>
+        <div id="segundoEUltimoFilhoDoFilho"></div>
+      </div>
+      Atenção!
+      <div id="terceiroFilho"></div>
+      <div id="quartoEUltimoFilho"></div>
+    </div>
+  </div>
+  <script>
+    //let verificador1 = document.getElementById('elementoOndeVoceEsta').parentNode
+    //verificador1.innerHTML="Chora porcada";
+
+    let ver1 = document.getElementById('elementoOndeVoceEsta')
+    ver1.firstElementChild.innerHTML="Tamo junto"
+    
+    let ver2 = document.getElementById('pai')
+    ver2.firstElementChild.innerHTML= "Tome essa"
+    
+    
+    let div = document.createElement("div");
+    ver1.appendChild(div);
+    ver2.appendChild(div);
+    
+    
+    console.log(ver2)
+  </script>
+ </body>
+ </html>
