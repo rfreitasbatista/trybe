@@ -1,0 +1,89 @@
+<!--Calculator
+Start with this webpage, which has inputs and buttons for things to calculate:-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Calculator</title>
+</head>
+<body>
+
+  <label>Square this number:
+    <input type="number" id="square-input" size="2">
+  </label>
+  <button id="square-button">Calculate</button>
+  <br><br>
+  
+  <label>Half this number:
+    <input type="number" id="half-input" size="2">
+  </label>
+  <button id="half-button">Calculate</button>
+  <br><br>
+  
+  <label>
+    Fraction:
+    <input type="number" id="percent1-input" size="2">
+  </label>
+  <label>
+    Whole:
+    <input type="number" id="percent2-input" size="2">
+  </label>
+  <button id="percent-button">Calculate</button>
+  <br><br>
+  
+  <label>Calculate area of circle with radius:
+    <input type="number" id="area-input" size="2">
+  </label>
+  <button id="area-button">Calculate</button> 
+  <br><br>
+  <div id="solution"></div>
+
+  <script>
+
+function squareNumber() {
+    let num = document.getElementById("square-input").value;
+    var squaredNumber = num * num;
+    document.getElementById("solution").innerHTML = "O numero "+ num + " ao quadrado é " + squaredNumber + "<br>";
+}
+
+function halfOf() {
+    let num = document.getElementById("half-input").value
+    var half = num / 2;
+    document.getElementById("solution").innerHTML = "A metade de " + num + " é igual a "+ half  
+}
+
+function percentOf() {
+    let num1 = document.getElementById("percent1-input").value
+    let num2 = document.getElementById("percent2-input").value
+    var percent = (num1/num2) * 100;
+    document.getElementById("solution").innerHTML= "O número " + num1 + " representa " + percent + "% do número " + num2; 
+}
+
+function areaOfCircle() {
+    let radius = document.getElementById("area-input").value
+    var area = Math.PI * radius*radius;
+    document.getElementById("solution").innerHTML = "A área do cícrculo com radius " + radius + " é " + area
+}
+
+
+    let sqrBut = document.querySelector("#square-input")
+    sqrBut.addEventListener("keyup", squareNumber)
+    
+
+    let halfBut = document.querySelector("#half-input")
+    halfBut.addEventListener("keyup", halfOf)
+
+    let percBut = document.querySelector("#percent2-input")
+    percBut.addEventListener("keyup", percentOf)
+
+    let areaBut = document.querySelector("#area-input")
+    areaBut.addEventListener("keyup", areaOfCircle)
+
+    
+  </script>
+</body>
+</html>
+<!--Add a script tag, and add the functions from the calculator exercise (view the solution if you haven't done it yet).
+For each operation, create an event listener for the button, and when it's clicked, find the value of the appropriate input and show the result of the calculation in the solution div.
+Bonus: respond to key presses so that the user doesn't have to click the button.
+See Solution-->
