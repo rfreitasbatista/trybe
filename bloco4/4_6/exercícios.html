@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 4.5</title>
+    <style>
+      div {
+        border-color: black;
+        border-style: solid;
+      }
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function bodyElementCreation(element, innerTextVar, classname) {
+        let elementoCriado = document.createElement(element)
+        document.body.appendChild(elementoCriado)
+        console.log(document.body)
+        elementoCriado.innerHTML = innerTextVar
+        elementoCriado.className = classname
+      }
+
+      function ElementCreation(element, innerTextVar, classname, classFather, nOfElements) {
+        if ( nOfElements > 1) {
+          for ( i = 0 ; i < nOfElements ; i++) {
+            let elementoCriado = document.createElement(element)
+            let elementoPai = document.getElementsByClassName(classFather)[0]
+            elementoPai.appendChild(elementoCriado)
+            console.log(document.body)
+            elementoCriado.innerHTML = innerTextVar
+            elementoCriado.className = classname
+          }
+        } else {
+        let elementoCriado = document.createElement(element)
+        let elementoPai = document.getElementsByClassName(classFather)[0]
+        elementoPai.appendChild(elementoCriado)
+        console.log(document.body)
+        elementoCriado.innerHTML = innerTextVar
+        elementoCriado.className = classname
+      }
+      }
+
+      function imgCreator(source, imgClass) {
+        let imagem = document.getElementsByClassName(imgClass)[0]
+        imagem.src = source
+      }
+
+      function listCreator(fatherElement, orderedOrUnordered, arrayDeDados ){
+        let listaCriada = document.createElement(orderedOrUnordered);
+        let listaTotal =[]
+        for (i=0 ; i < arrayDeDados.length ; i++){
+        let liAdd = "<li>"+arrayDeDados[i]+"</li>"
+        listaTotal += liAdd 
+        }
+        let elementoPai = document.getElementsByClassName(fatherElement)[0];
+        elementoPai.innerHTML = listaTotal
+      }
+      
+
+
+    
+    bodyElementCreation("h1", "Exercicio 4.5", "title");
+    bodyElementCreation("div", "" , "main-content")
+    ElementCreation("div", "" , "center-content", "main-content", 1)
+    ElementCreation("p", "Rodrigo Freitas Batista", "", "center-content", 1)
+    ElementCreation("div" , "" , "left-content" , "main-content", 1)
+    ElementCreation("div", "" , "right-content" , "main-content", 1)
+    ElementCreation("img", "" , "small-image", "left-content", 1)
+    imgCreator("https://picsum.photos/200", "small-image")
+    listCreator("right-content", "ul",["um", "dois", "tres", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez"])
+    ElementCreation("h3", "Iguais", "description", "main-content", 3)
+
+      function removeElements(fatherElement, element, ordem){
+        let paiDoElementoRemovido = document.getElementsByClassName(fatherElement)[0];
+        let elementoRemovido = document.getElementsByClassName(element)[ordem-1];
+        paiDoElementoRemovido.removeChild(elementoRemovido)
+      }
+      function removeElementsHTML(fatherElement, element, ordem){
+        let paiDoElementoRemovido = document.getElementsByClassName(fatherElement)[0];
+        let elementoRemovido = document.getElementsByTagName(element)[ordem-1];
+        paiDoElementoRemovido.removeChild(elementoRemovido)
+      }
+    //Ordem significa se ele é o primeiro, segundo e etc, se for o primeiro a aparecer = 1//
+
+    removeElements("main-content", "left-content", 1)
+
+    let elementoAcentralizar = document.getElementsByClassName("right-content")[0]
+    elementoAcentralizar.style.marginRight = "auto"
+    let elementoAMudarCorDeFundo = document.getElementsByClassName("center-content")[0];
+    elementoAMudarCorDeFundo.style.backgroundColor = "green"
+
+    removeElementsHTML("right-content", "li", 10)
+    removeElementsHTML("right-content", "li", 9)
+    
+    </script>
+  </body>
+</html>
