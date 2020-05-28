@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8" />
+  <title>Cat Walk</title>
+
+  <style>
+    .esquerda {
+      transform: scaleX(-1);
+    }
+    .direita {
+      transform: scaleX(1);
+    }
+  </style>
+ </head>
+ <body>
+  
+  <img style="position:absolute;" src="http://www.anniemation.com/clip_art/images/cat-walk.gif">
+  <script>
+    let gato = document.getElementsByTagName("img")[0]
+    gato.style.marginLeft = 0
+    console.log(gato);
+      let counter = 0
+      let andaparafrente = true
+
+    
+    function catWalk (){
+      let marginAtual = parseInt(gato.style.marginLeft)
+      if (marginAtual === 0 && andaparafrente === false){
+        andaparafrente = true;
+      }
+      if (marginAtual >= (window.innerWidth-gato.width) && andaparafrente ===true) {
+        andaparafrente = false;
+      }
+      console.log(andaparafrente)
+      if (andaparafrente === true) {
+      gato.style.marginLeft = (marginAtual+10) +"px";
+      gato.classList.remove("esquerda");
+      } else {
+      gato.style.marginLeft = (marginAtual-10) +"px";
+      gato.className = "esquerda"
+      }
+    }
+    document.ge
+    window.setInterval(catWalk, 50)
+  
+
+  </script>
+ </body>
+</html>
