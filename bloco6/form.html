@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .infopessoal {
+        display: block;
+        margin: 10px;
+        width: 200px;
+        line-height: 20px;
+        text-align: left;
+      }
+
+      input {
+        width: 250px;
+      }
+
+      .estado {
+        text-align: left;
+      }
+
+      #casa,
+      #apartamento {
+        margin: 10px 0 10px 0;
+        width: 20px;
+      }
+
+      #info {
+        width: 300px;
+        text-align: center;
+      }
+
+      #submit,
+      #submit1 {
+        width: 80%;
+      }
+    </style>
+  </head>
+  <body>
+    <fieldset id="info">
+      <legend>Dados pessoais:</legend>
+      <label class="infopessoal datalabel"> Nome:</label>
+      <input type="text" maxlength="40" required class="data" />
+
+      <label class="infopessoal datalabel"> Email:</label>
+      <input id="email" type="email" required class="data" />
+
+      <br /><br />
+
+      <input type="submit" id="submit" value="Validar Email" />
+
+      <label class="infopessoal datalabel"> CPF:</label>
+      <input type="text" maxlength="11" required class="data" />
+
+      <label class="infopessoal datalabel"> Endereço:</label>
+      <input type="text" maxlength="200" required class="data" />
+
+      <br /><br />
+
+      <label class="estado dataselectlabel"> Estado/UF:</label>
+      <select class="dataselect"> </select>
+
+      <br />
+
+      <p>Tipo de residência:</p>
+      <label class="infopessoalradio datalabel">Casa</label>
+      <input id="casa" type="radio" name="casa" class="data" />
+
+      <label class="infopessoalradio datalabel">Apartamento</label>
+      <input id="apartamento" type="radio" name="apartamento" class="data" />
+     
+    </fieldset>
+
+    <fieldset id="info">
+      <legend>Dados do último emprego:</legend>
+      <label class="infopessoal datalabel" for="cargo">Cargo:</label>
+      <input
+        type="text"
+        maxlength="40"
+        name="cargo"
+        id="cargo"
+        required
+        class="data"
+      />
+      <label class="infopessoal datalabel" for="descricaoCargo"
+        >Descrição do cargo:</label
+      >
+      <input
+        type="text"
+        maxlength="500"
+        required
+        name="descricaoCargo"
+        id="descricaoCargo"
+        class="data"
+      />
+      <label class="infopessoal datalabel" for="dataInicio"> Data de início: </label>
+      <input
+        type="text"
+        id="dataInicio"
+        name="dataInicio"
+        required
+        class="data"
+      />
+      <br />
+      <label class="infopessoal datalabeltextarea" for="resumo"> Resumo do currículo:</label>
+      <textarea name="resumo" id="resumo" maxlength="1000" required class="datatextarea"></textarea>
+      <br /><br />
+      <input type="submit" id="submit1" value="Enviar" />
+    </fieldset>
+    <div id="results"></div>
+
+
+
+
+    <script type="text/javascript">
+      function validateEmail() {
+        let email = document.getElementById("email").value;
+        console.log(email);
+        var regex = /^(\s?[^\s,]+@[^\s,]+\.[^\s,]+\s?,)*(\s?[^\s,]+@[^\s,]+\.[^\s,]+)$/;
+        let teste = true;
+
+        if (email != "" && regex.test(email)) {
+          teste = true;
+          submit.style.backgroundColor = "green";
+          submit.value = "Validado";
+        } else {
+          alert("Insira um email existente");
+        }
+      }
+      const UFFather = document.getElementsByTagName("select")[0];
+      const UF = [
+        ["Acre", "AC"],
+        ["Alagoas", "AL"],
+        ["Amapá", "AP"],
+        ["Amazonas", "AM"],
+        ["Bahia", "BA"],
+        ["Ceará", "CE"],
+        ["Distrito Federal", "DF"],
+        ["Espírito Santo", "ES"],
+        ["Goiás", "GO"],
+        ["Maranhão", "MA"],
+        ["Mato Grosso", "MT"],
+        ["Mato Grosso do Sul", "MS"],
+        ["Minas Gerais", "MG"],
+        ["Pará", "PA"],
+        ["Paraíba", "PB"],
+        ["Paraná", "PR"],
+        ["Pernambuco", "PE"],
+        ["Piauí", "PI"],
+        ["Rio de Janeiro", "RJ"],
+        ["Rio Grande do Norte", "RN"],
+        ["Rio Grande do Sul", "RS"],
+        ["Rondônia", "RO"],
+        ["Roraima", "RR"],
+        ["Santa Catarina", "SC"],
+        ["São Paulo", "SP"],
+        ["Sergipe", "SE"],
+        ["Tocantins", "TO"],
+      ];
+      let optCreation;
+      for (i = 0; i < UF.length; i++) {
+        optCreation = document.createElement("option");
+        optCreation.innerHTML = UF[i];
+        UFFather.appendChild(optCreation);
+      }
+      var submit = document.getElementById("submit");
+      submit.addEventListener("click", validateEmail);
+      var submit1 = document.getElementById("submit1");
+      //submit1.addEventListener("click", prevent);
+      submit1.addEventListener("click", checkDate);
+      submit1.addEventListener("click", createData);
+
+    //
+
+
+      function checkDate() {
+        let dataDeInicio = document.getElementById("dataInicio").value;
+        console.log(dataDeInicio);
+        let dateSplit = dataDeInicio.split("/");
+        console.log(dateSplit);
+        if (dateSplit[0] === "" || dateSplit[0] <= 0 || dateSplit[0] > 31) {
+          alert("Insira uma data correta: dia inválido");
+        }
+        if (dateSplit[1] === "" || dateSplit[1] <= 0 || dateSplit[1] > 12) {
+          alert("Insira uma data correta: mes inválido");
+        }
+        if (
+          dateSplit[2] === "" ||
+          dateSplit[2] <= 1950 ||
+          dateSplit[2] > 2020
+        ) {
+          alert("Insira uma data correta: ano inválido");
+        }
+      }
+
+
+
+      function createData() {
+        const allData = document.getElementsByClassName("data");
+        const allLabel = document.getElementsByClassName("datalabel");
+        const tableInfo = document.createElement("table");
+        const divPai = document.getElementById("results");
+
+        for (i = 0; i < allData.length; i += 1) {
+          newRow = document.createElement("tr");
+          newRow.className = i;
+          tableInfo.appendChild(newRow);
+          if ( allData[i].type === "radio") {
+            if ( allData[i].checked) {
+              newLabelData = document.createElement("td");
+              newLabelData.innerHTML = allLabel[i].innerHTML;
+              newRow.appendChild(newLabelData);
+              newInputData = document.createElement("td");
+              newInputData.innerHTML = "Sim"
+              newRow.appendChild(newInputData);
+            }
+          
+          } else {
+          newLabelData = document.createElement("td");
+          newLabelData.innerHTML = allLabel[i].innerHTML;
+          newRow.appendChild(newLabelData);
+          newInputData = document.createElement("td");
+          newInputData.innerHTML = allData[i].value;
+          newRow.appendChild(newInputData);
+        }
+      }
+      const selectTag1 = document.getElementsByTagName("textarea")[0].value;
+        newRow1 = document.createElement("tr");
+        tableInfo.appendChild(newRow1);
+        newLabelData1 = document.createElement("td");
+        newLabelData1.innerHTML = "Resumo do currículo:";
+        newRow1.appendChild(newLabelData1);
+        newInputData1 = document.createElement("td");
+        newInputData1.innerHTML = selectTag1
+        newRow1.appendChild(newInputData1);
+      
+      const selectTag = document.getElementsByTagName("select")[0].value
+        newRow = document.createElement("tr");
+        tableInfo.appendChild(newRow);
+        newLabelData = document.createElement("td");
+        newLabelData.innerHTML = "Estado/UF:";
+        newRow.appendChild(newLabelData);
+        newInputData = document.createElement("td");
+        newInputData.innerHTML = selectTag
+        newRow.appendChild(newInputData); 
+
+        divPai.appendChild(tableInfo);
+      }
+    </script>
+  </body>
+</html>
