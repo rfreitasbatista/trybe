@@ -36,9 +36,14 @@
       #submit1 {
         width: 80%;
       }
+
+      #validar, #reset {
+        margin: 20px 37px;
+      }
     </style>
   </head>
   <body>
+    <form>
     <fieldset id="info">
       <legend>Dados pessoais:</legend>
       <label class="infopessoal datalabel"> Nome:</label>
@@ -49,55 +54,54 @@
 
       <br /><br />
 
-      <input type="submit" id="submit" value="Validar Email" />
-
+      
       <label class="infopessoal datalabel"> CPF:</label>
       <input type="text" maxlength="11" required class="data" />
-
+      
       <label class="infopessoal datalabel"> Endereço:</label>
       <input type="text" maxlength="200" required class="data" />
-
+      
       <br /><br />
-
+      
       <label class="estado dataselectlabel"> Estado/UF:</label>
       <select class="dataselect"> </select>
-
+      
       <br />
-
+      
       <p>Tipo de residência:</p>
       <label class="infopessoalradio datalabel">Casa</label>
       <input id="casa" type="radio" name="casa" class="data" />
-
+      
       <label class="infopessoalradio datalabel">Apartamento</label>
       <input id="apartamento" type="radio" name="apartamento" class="data" />
-     
+      <input type="button" id="submit" value="Validar Campo" />
     </fieldset>
-
+    
     <fieldset id="info">
       <legend>Dados do último emprego:</legend>
       <label class="infopessoal datalabel" for="cargo">Cargo:</label>
       <input
-        type="text"
-        maxlength="40"
-        name="cargo"
-        id="cargo"
-        required
-        class="data"
+      type="text"
+      maxlength="40"
+      name="cargo"
+      id="cargo"
+      required
+      class="data"
       />
       <label class="infopessoal datalabel" for="descricaoCargo"
-        >Descrição do cargo:</label
+      >Descrição do cargo:</label
       >
       <input
-        type="text"
-        maxlength="500"
-        required
-        name="descricaoCargo"
-        id="descricaoCargo"
-        class="data"
+      type="text"
+      maxlength="500"
+      required
+      name="descricaoCargo"
+      id="descricaoCargo"
+      class="data"
       />
       <label class="infopessoal datalabel" for="dataInicio"> Data de início: </label>
       <input
-        type="text"
+      type="text"
         id="dataInicio"
         name="dataInicio"
         required
@@ -105,15 +109,20 @@
       />
       <br />
       <label class="infopessoal datalabeltextarea" for="resumo"> Resumo do currículo:</label>
-      <textarea name="resumo" id="resumo" maxlength="1000" required class="datatextarea"></textarea>
+      <textarea name="resumo" id="resumo" maxlength="1000" class="datatextarea" required></textarea>
       <br /><br />
-      <input type="submit" id="submit1" value="Enviar" />
+      <input type="button" id="submit1" value="Validar Campo" />
     </fieldset>
+    
+    <input type="submit" id="validar" value="Validar"><br>
+    <input type="button" id="reset" value="Limpar formulário" onClick="window.location.reload();">
+  </form>
+    
     <div id="results"></div>
-
-
-
-
+    
+    
+    
+    
     <script type="text/javascript">
       function validateEmail() {
         let email = document.getElementById("email").value;
@@ -170,7 +179,8 @@
       var submit1 = document.getElementById("submit1");
       //submit1.addEventListener("click", prevent);
       submit1.addEventListener("click", checkDate);
-      submit1.addEventListener("click", createData);
+      var validation = document.getElementById("validar");
+      validation.addEventListener("click", createData);
 
     //
 
@@ -197,7 +207,7 @@
 
 
 
-      function createData() {
+      function createData(event) {
         const allData = document.getElementsByClassName("data");
         const allLabel = document.getElementsByClassName("datalabel");
         const tableInfo = document.createElement("table");
@@ -247,6 +257,7 @@
         newRow.appendChild(newInputData); 
 
         divPai.appendChild(tableInfo);
+        event.preventDefault();
       }
     </script>
   </body>
