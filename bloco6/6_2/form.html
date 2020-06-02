@@ -10,7 +10,11 @@
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
-
+    <link rel="stylesheet" type="text/css" href="./lib/pop-up-valid.css" />
+    <script src="./lib/pop-up-valid.js"></script>
+    <link rel="stylesheet" type="text/css" href="./lib/datepickerX.css" />
+    <script src="./lib/datepickerX.js"></script>
+    <script src="./lib/cpfcheck.js"></script>
     <style>
       iframe {
         display: none;
@@ -48,60 +52,60 @@
     <div id="container">
       <div id="form">
         <form target="frame">
+          <!--------------------DADOS PESSOAIS------------------>
           <fieldset>
             <legend><h2>Dados pessoais:</h2></legend>
-
+            <!--------------------NOME------------------>
             <div class="form-group">
               <label class="infopessoal datalabel"> Nome:</label>
               <input
                 type="text"
                 maxlength="40"
                 required
-                class="data form-control"
+                class="data form-control validate"
+                data-validate="required"
               />
             </div>
-
+            <!--------------------EMAIL------------------>
             <div class="form-group">
-              <label class="infopessoal datalabel"> Email:</label>
+              <label for="email" class="infopessoal datalabel"> Email:</label>
               <input
                 id="email"
                 type="email"
                 required
-                class="data form-control"
+                class="data form-control validate"
+                data-validate="required,email"
               />
             </div>
-
-            <br /><br />
-
+            <!--------------------CPF------------------>
             <div class="form-group">
               <label class="infopessoal datalabel"> CPF:</label>
               <input
                 type="text"
                 maxlength="11"
+                id="cpftest"
                 required
-                class="data form-control"
+                class="data form-control validate"
+                data-validate="required"
               />
             </div>
-
+            <!--------------------ENDEREÇO------------------>
             <div class="form-group">
               <label class="infopessoal datalabel"> Endereço:</label>
               <input
                 type="text"
                 maxlength="200"
                 required
-                class="data form-control"
+                class="data form-control validate"
+                data-validate="required"
               />
             </div>
-
-            <br /><br />
-
+            <!--------------------ESTADO/UF OPTIONS------------------>
             <div class="form-group">
               <label class="estado dataselectlabel"> Estado/UF:</label>
               <select class="dataselect form-control"> </select>
             </div>
-
-            <br />
-
+            <!--------------------RADIO - CASA/APARTAMENTO----------------->
             <div class="form-check">
               <p>Tipo de residência:</p>
               <input
@@ -114,6 +118,7 @@
                 >Casa</label
               >
             </div>
+
             <div class="form-check">
               <input
                 id="apartamento"
@@ -121,20 +126,17 @@
                 name="apartamento"
                 class="data form-check-input"
               />
-              <label class="infopessoalradio datalabel form-check-label">Apartamento</label>
-            </div><br>
-
-            <input
-              type="button"
-              id="submit"
-              value="Validar Campo"
-              style="display: none;"
-            />
+              <label class="infopessoalradio datalabel form-check-label"
+                >Apartamento</label
+              >
+            </div>
+            <br />
           </fieldset>
-          <hr>
+          <hr />
+          <!-----------------------------ULTIMO EMPREGO----------------------->
           <fieldset id="info">
             <legend><h2>Dados do último emprego:</h2></legend>
-
+            <!--------------------------------CARGO------------------>
             <div class="form-group">
               <label class="infopessoal datalabel" for="cargo">Cargo:</label>
               <input
@@ -143,10 +145,11 @@
                 name="cargo"
                 id="cargo"
                 required
-                class="data form-control"
+                class="data form-control validate"
+                data-validate="required"
               />
             </div>
-
+            <!--------------------DESCRIÇÃO DO CARGO------------------>
             <div class="form-group">
               <label class="infopessoal datalabel" for="descricaoCargo"
                 >Descrição do cargo:</label
@@ -157,10 +160,11 @@
                 required
                 name="descricaoCargo"
                 id="descricaoCargo"
-                class="data form-control"
+                class="data form-control validate"
+                data-validate="required"
               />
             </div>
-
+            <!--------------------DATA DE INICIO------------------>
             <div class="form-group">
               <label class="infopessoal datalabel" for="dataInicio">
                 Data de início:
@@ -170,12 +174,13 @@
                 id="dataInicio"
                 name="dataInicio"
                 required
-                class="data form-control"
+                class="data form-control validate"
+                data-validate="required"
               />
             </div>
 
             <br />
-
+            <!--------------------RESUMO CURRÍCULO------------------>
             <div class="form-group">
               <label class="infopessoal datalabeltextarea" for="resumo">
                 Resumo do currículo:</label
@@ -184,22 +189,20 @@
                 name="resumo"
                 id="resumo"
                 maxlength="1000"
-                class="datatextarea form-control"
                 required
+                class="datatextarea form-control validate"
+                data-validate="required"
               ></textarea>
             </div>
-
-            <br /><br />
-            <input type="button" id="submit1" value="Validar Campo" style="display:none"/>
           </fieldset>
-
-          <input type="submit" id="validar" value="Validar" class="btn btn-outline-success btn-lg btn-block"/><br />
+          <!--------------------BOTAO VALIDAR------------------>
           <input
-            type="button"
-            id="formulate"
-            value="Formular currículo"
-            class="btn btn-outline-dark btn-lg btn-block"
+            type="submit"
+            id="validar"
+            value="Validar"
+            class="btn btn-outline-success btn-lg btn-block"
           /><br />
+          <!--------------------BOTAO LIMPAR------------------>
           <input
             type="button"
             id="reset"
@@ -216,22 +219,14 @@
         <iframe name="frame"></iframe>
       </div>
     </div>
-    <script type="text/javascript">
-      function validateEmail() {
-        let email = document.getElementById("email").value;
-        console.log(email);
-        var regex = /^(\s?[^\s,]+@[^\s,]+\.[^\s,]+\s?,)*(\s?[^\s,]+@[^\s,]+\.[^\s,]+)$/;
-        let teste = true;
 
-        if (email != "" && regex.test(email)) {
-          teste = true;
-          submit.style.backgroundColor = "green";
-          submit.value = "Validado";
-        } else {
-          alert("Insira um email existente");
-        }
-      }
+    <script type="text/javascript">
+
+      //CRIAR O OPTIONS
+      const selectTag = document.getElementsByTagName("select")[0].value;
+      const selectTag1 = document.getElementsByTagName("textarea")[0].value;
       const UFFather = document.getElementsByTagName("select")[0];
+      const cpfInput = document.getElementById("cpftest");
       const UF = [
         ["Selecione um local"],
         ["Acre", "AC"],
@@ -263,58 +258,50 @@
         ["Tocantins", "TO"],
       ];
       let optCreation;
+
       for (i = 0; i < UF.length; i++) {
         optCreation = document.createElement("option");
         optCreation.innerHTML = UF[i];
         UFFather.appendChild(optCreation);
       }
-      var submit = document.getElementById("submit");
-      submit.addEventListener("click", validateEmail);
-      var submit1 = document.getElementById("submit1");
-      //submit1.addEventListener("click", prevent);
-      submit1.addEventListener("click", checkDate);
-      var validation = document.getElementById("validar");
-      validation.addEventListener("click", validar);
-      var formular = document.getElementById("formulate");
-      formular.addEventListener("click", createData);
-      //
 
-      function checkDate() {
-        let dataDeInicio = document.getElementById("dataInicio").value;
-        console.log(dataDeInicio);
-        let dateSplit = dataDeInicio.split("/");
-        console.log(dateSplit);
-        if (dateSplit[0] === "" || dateSplit[0] <= 0 || dateSplit[0] > 31) {
-          return alert("Insira uma data correta: dia inválido");
-        }
-        if (dateSplit[1] === "" || dateSplit[1] <= 0 || dateSplit[1] > 12) {
-          return alert("Insira uma data correta: mes inválido");
-        }
-        if (
-          dateSplit[2] === "" ||
-          dateSplit[2] <= 1950 ||
-          dateSplit[2] > 2020
-        ) {
-          return alert("Insira uma data correta: ano inválido");
-        }
-        submit1.style.backgroundColor = "green";
-        submit1.value = "Validado";
-      }
+      //VALIDAR BOTÃO
+      var validation1 = document.getElementById("validar");
 
-      const selectTag = document.getElementsByTagName("select")[0].value;
-      const selectTag1 = document.getElementsByTagName("textarea")[0].value;
-      let formvalid = false
-      function createData(event) {
+      //DATE PICKER
 
-        if (formvalid === false) {
-          alert ("Preencha corretamente o formulário e valide-o")
+      let datepick = document.getElementById("dataInicio").DatePickerX.init({
+        format: "dd/mm/yyyy",
+        minDate: "01/01/1980",
+      });
+
+      //POP UP VALID
+      validation1.addEventListener("click", function () {
+        validation.init();
+        if (validation.isValid()) {
+          if (validaCPF(cpfInput.value)){
+          validation1.style.backgroundColor = "green";
+          validation1.style.color = "black";
+          validation1.value = "Validado";
+          createData();
+          } else {
+            alert("CPF inválido")
+          }
         } else {
+          validation1.style.backgroundColor = "red";
+          validation1.style.color = "white";
+          validation1.style.fontSize = "0.9em";
+          validation1.value = "Validação inválida, tente novamente";
+        }
+      });
+
+      //FUNÇAO PRA CRIAR A TABELA
+      function createData() {
         const divPai = document.getElementById("results");
         let oldDiv = document.getElementsByTagName("table")[0];
-        console.log(oldDiv);
         if (oldDiv != undefined) {
           divPai.removeChild(oldDiv);
-          createData(event);
+          createData();
         } else {
           const allData = document.getElementsByClassName("data");
           const allLabel = document.getElementsByClassName("datalabel");
@@ -322,7 +309,6 @@
 
           for (i = 0; i < allData.length; i += 1) {
             newRow = document.createElement("tr");
-            newRow.className = i;
             tableInfo.appendChild(newRow);
             allData[i].checkValidity();
             if (allData[i].type === "radio") {
@@ -364,27 +350,12 @@
           newRow.appendChild(newInputData);
 
           divPai.appendChild(tableInfo);
-          divPai.style.display = "block"
-          event.preventDefault();
-        }
-      }
-      }
-      
-      function validar() {
-        checkDate();
-        validateEmail();
-        const selectTag1 = document.getElementsByTagName("textarea")[0].value;
-        if (
-          selectTag1 != "" &&
-          selectTag != "Selecione um Estado" &&
-          submit1.style.backgroundColor === "green" &&
-          submit1.style.backgroundColor === "green"
-        ) {
-          validation.style.backgroundColor = "green";
-          formvalid = true;
+          divPai.style.display = "block";
         }
       }
 
+      
+      
     </script>
     <!-- JS, Popper.js, and jQuery -->
     <script
