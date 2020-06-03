@@ -176,10 +176,12 @@ html {
   nav ul {
     padding: 10px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
   }
 
   nav li {
+    padding: 0 30px;
+    margin: 0 130px;
     text-decoration: none;
     list-style: none;
     font-size: 1.3em;
