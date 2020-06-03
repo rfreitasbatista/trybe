@@ -199,7 +199,7 @@
           <input
             type="submit"
             id="validar"
-            value="Validar"
+            value="Criar currículo"
             class="btn btn-outline-success btn-lg btn-block"
           /><br />
           <!--------------------BOTAO LIMPAR------------------>
@@ -282,7 +282,8 @@
           if (validaCPF(cpfInput.value)){
           validation1.style.backgroundColor = "green";
           validation1.style.color = "black";
-          validation1.value = "Validado";
+          validation1.style.fontSize = "0.9em";
+          validation1.value = "Currículo gerado com sucesso!";
           createData();
           } else {
             alert("CPF inválido")
