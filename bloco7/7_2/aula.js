@@ -70,4 +70,34 @@ for(i in pairKeyValue) {
 };
  */
 
- 
+function criaObjeto (objeto, chave, valor) {
+  let novoobjeto = {};
+  novoobjeto[objeto] = {};
+  novoobjeto[objeto][chave] = valor;
+  return novoobjeto
+}
+
+console.log(criaObjeto("Anderson", "Level de viadagem", 1000))
+
+ function criaObjeto (objeto, chave, valor) {
+   let novoobjeto = {};
+   novoobjeto[objeto] = {};
+   novoobjeto[objeto][chave] = valor;
+   return novoobjeto
+ }
+
+ console.log(criaObjeto("Anderson", "Level de viadagem", 1000))
+
+ const customer = {
+  firstName: 'Roberto',
+  age: 22,
+  job: 'Teacher',
+};
+
+let newKey = 'lastName';
+const lastName = 'Ferreira';
+customer[newKey] = lastName;
+newKey = 'fullName';
+const fullName = `${customer.firstName} ${customer.lastName}`;
+customer[newKey] = fullName;
+console.log(customer);
