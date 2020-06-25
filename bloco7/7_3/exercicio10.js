@@ -19,4 +19,6 @@ const obj3 = {
 
 // implemente seus testes aqui
 const expected = obj3
-assert.deepEqual(obj3, obj2, "Os objetos não são iguais") 
+//assert.deepEqual(obj3, obj2, "Os objetos não são iguais") 
+
+module.exports = {obj1, obj2, obj3}

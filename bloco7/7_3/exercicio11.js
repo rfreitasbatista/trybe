@@ -8,5 +8,7 @@ function isAbove(num1, num2) {
 }
 
 // implemente seus testes aqui
-const expected = isAbove(32, 18);
-assert.equal();
+//const expected = isAbove(32, 18);
+//assert.equal();
+
+module.exports = isAbove

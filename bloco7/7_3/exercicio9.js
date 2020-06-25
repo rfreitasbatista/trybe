@@ -9,3 +9,5 @@ console.log(change(false))
 // implemente seus testes aqui
 /* const expected = change(false);
 assert.ok(expected === false, "Errado") */
+
+module.exports = change
