@@ -1,14 +1,14 @@
 /*EXERCICIO 1********************************************************************/
 
-const assert = require('assert');
+//const assert = require('assert');
 
-function sum(a, b) {
-  if (typeof a !== 'number' || typeof b !== 'number') {
-    throw new Error('parameters must be numbers');
-  }
+//function sum(a, b) {
+//  if (typeof a !== 'number' || typeof b !== 'number') {
+//    throw new Error('parameters must be numbers');
+//  }
 
-  return a + b;
-}
+//  return a + b;
+//}
 
 // implemente seus testes aqui
 
@@ -20,7 +20,7 @@ function sum(a, b) {
 /* assert.equal(sum(4, "5"), 9) */
 /* Exercício 4 */
 /* assert.throws(() => { division(4, "5"); }, `Error: parameters must be numbers`); */
-assert.fail(sum(4, "5"), 9)
+//assert.fail(sum(4, "5"), 9)
 
 /*EXERCICIO 2**********************************************************************/
 

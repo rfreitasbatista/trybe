@@ -20,6 +20,10 @@ const personLikes = (nome) => {
   let {name, age, likes} = nome
   return `${name} is ${age} years old and likes ${likes.join(", ")}.`
 }
+
+console.log(personLikes(alex))
 assert.equal(personLikes(alex), "Alex is 26 years old and likes fly fishing.")
 assert.equal(personLikes(gunnar), "Gunnar is 30 years old and likes hiking, scuba diving, taking pictures.")
     
+module.exports = personLikes
+ 

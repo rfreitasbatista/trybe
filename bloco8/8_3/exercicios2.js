@@ -16,3 +16,4 @@ assert.equal(sum(1, 2), 3)
 assert.equal(sum(1, 2, 3), 6)
 assert.equal(sum(1, 2, 3, 4), 10)
     
+module.exports = sum;
