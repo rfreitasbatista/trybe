@@ -1,0 +1,101 @@
+#root {
+  background: url(./pokemon_lets_go_pikachu_and_eevee-5.jpg) repeat-y;
+  background-size: cover;
+  min-width: 700px;
+}
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.Flex {
+  width: 700px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.OutsideBox {
+  padding-top: 70px ;
+}
+
+.PokedexImage {
+  background: url(./pokedex1.png) no-repeat top center;
+  background-size: contain;
+  height: 570px;
+  margin: 0 auto;
+}
+
+.PokemonImage {
+  width: 200px;
+  margin-left: 5px;
+  margin-top: 20px;
+}
+
+.PokemonText {
+  padding: 0 10px;
+  margin-top: 40px;
+}
+
+.Square {
+  width: 550px;
+  display:flex;
+  justify-content: space-between;
+  flex-direction: row;
+  border-radius: 10px;
+  margin: 100px 5px;
+}
+
+.Button {
+  width: 97px;
+  position: relative;
+  bottom: 144px;
+  left: 195px;
+  margin-right: 22px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  padding:10px 0px
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Hide {
+  display: none;
+}
